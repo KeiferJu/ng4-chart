@@ -1,0 +1,4 @@
+<!--折线柱状图-->
+<div  *ngIf="type === 'hybird1'" theme="dark"  echarts class="demo-chart" [options]="chartOption1" (chartClick)="onChartClick($event)" (chartDblClick)="onChartDblClick($event)"></div>
+<!--柱状饼状动图-->
+<div *ngIf="type === 'hybird2'" theme="dark" echarts [options]="chartOption2" class="demo-chart1"></div>

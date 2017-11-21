@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/smartmapx/smartmapx.css';
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../node_modules/primeng/resources/themes/omega/theme.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
+
+.demo-chart {
+  width: 400px;
+  height: 400px;
+  position: fixed !important;
+  background: rgba(51, 51, 51, 0.8) !important;
+  right: 10px;
+  bottom: 20px;
+}
+
+.demo-chart1 {
+  width: 100%;
+  height: 400px;
+  position: fixed !important;
+  background: rgba(51, 51, 51, 0.8) !important;
+  left: 5px;
+  bottom: 5px;
+}

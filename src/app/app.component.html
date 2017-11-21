@@ -1,0 +1,20 @@
+<div id="map"></div>
+<p-panelMenu [model]="items" [style]="{'width':'200px'}"></p-panelMenu>
+<!--柱状图-->
+<app-bar *ngIf="id === 'bar'" [type]="type"></app-bar>
+<!--饼状图-->
+<app-pie *ngIf="id === 'pie'" [type]="type"></app-pie>
+<!--折线图-->
+<app-line *ngIf="id === 'line'" [type]="type"></app-line>
+<!--面积图-->
+<app-area *ngIf="id === 'area'" [type]="type"></app-area>
+<!--散点图-->
+<app-splashes *ngIf="id === 'splashes'" [type]="type"></app-splashes>
+<!--气泡图-->
+<app-bubble *ngIf="id === 'bubble'" [type]="type"></app-bubble>
+<!--仪表盘-->
+<app-dashboard *ngIf="id === 'dashboard'" [type]="type"></app-dashboard>
+<!--点密度图-->
+<app-pointdensity *ngIf="id === 'pointdensity'" [type]="type"></app-pointdensity>
+<!--混合图-->
+<app-hybird *ngIf="id === 'hybird'" [type]="type"></app-hybird>
