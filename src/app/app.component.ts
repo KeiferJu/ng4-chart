@@ -289,13 +289,23 @@ export class AppComponent implements OnInit {
       center: [116.39738, 39.90579],
       zoom: 7
     });
+
   }
 
   onclick() {
-    this.visibility === 'visible'? this.visibility = 'none': this.visibility = 'visible';
+    this.visibility === 'visible' ? this.visibility = 'none' : this.visibility = 'visible';
     this.map.setLayoutProperty('adm_县级市', 'visibility', this.visibility)
     this.map.setLayoutProperty('adm_area', 'visibility', this.visibility)
   }
 
+
+  clostSta() {
+    this.id = '';
+    this.type = '';
+    if (this.marker) {
+      this.marker.remove();
+    }
+    this.map.flyTo({center: [116.39738, 39.90579], zoom: 7});
+  }
 }
 

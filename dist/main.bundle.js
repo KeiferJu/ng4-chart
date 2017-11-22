@@ -16,7 +16,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"map\"></div>\n<p-panelMenu [model]=\"items\" [style]=\"{'width':'200px'}\"></p-panelMenu>\n<button pButton type=\"button\" (click)=\"onclick()\" [label]=\"visibility === 'visible'? '隐藏':'显示'\" style=\"position: fixed;top: 20px;right: 20px;\"></button>\n<!--柱状图-->\n<app-bar *ngIf=\"id === 'bar'\" [type]=\"type\"></app-bar>\n<!--饼状图-->\n<app-pie *ngIf=\"id === 'pie'\" [type]=\"type\"></app-pie>\n<!--折线图-->\n<app-line *ngIf=\"id === 'line'\" [type]=\"type\"></app-line>\n<!--面积图-->\n<app-area *ngIf=\"id === 'area'\" [type]=\"type\"></app-area>\n<!--散点图-->\n<app-splashes *ngIf=\"id === 'splashes'\" [type]=\"type\"></app-splashes>\n<!--气泡图-->\n<app-bubble *ngIf=\"id === 'bubble'\" [type]=\"type\"></app-bubble>\n<!--仪表盘-->\n<app-dashboard *ngIf=\"id === 'dashboard'\" [type]=\"type\"></app-dashboard>\n<!--点密度图-->\n<app-pointdensity *ngIf=\"id === 'pointdensity'\" [type]=\"type\"></app-pointdensity>\n<!--混合图-->\n<app-hybird *ngIf=\"id === 'hybird'\" [type]=\"type\"></app-hybird>\n"
+module.exports = "<div id=\"map\"></div>\n<p-panelMenu [model]=\"items\" [style]=\"{'width':'200px'}\"></p-panelMenu>\n<button pButton type=\"button\" (click)=\"onclick()\" [label]=\"visibility === 'visible'? '隐藏':'显示'\" style=\"position: fixed;top: 20px;right: 20px;\"></button>\n<button pButton type=\"button\" (click)=\"clostSta()\" label=\"关闭\" style=\"position: fixed;top: 60px;right: 20px;\"></button>\n<!--柱状图-->\n<app-bar *ngIf=\"id === 'bar'\" [type]=\"type\"></app-bar>\n<!--饼状图-->\n<app-pie *ngIf=\"id === 'pie'\" [type]=\"type\"></app-pie>\n<!--折线图-->\n<app-line *ngIf=\"id === 'line'\" [type]=\"type\"></app-line>\n<!--面积图-->\n<app-area *ngIf=\"id === 'area'\" [type]=\"type\"></app-area>\n<!--散点图-->\n<app-splashes *ngIf=\"id === 'splashes'\" [type]=\"type\"></app-splashes>\n<!--气泡图-->\n<app-bubble *ngIf=\"id === 'bubble'\" [type]=\"type\"></app-bubble>\n<!--仪表盘-->\n<app-dashboard *ngIf=\"id === 'dashboard'\" [type]=\"type\"></app-dashboard>\n<!--点密度图-->\n<app-pointdensity *ngIf=\"id === 'pointdensity'\" [type]=\"type\"></app-pointdensity>\n<!--混合图-->\n<app-hybird *ngIf=\"id === 'hybird'\" [type]=\"type\"></app-hybird>\n"
 
 /***/ }),
 
@@ -268,7 +268,8 @@ var AppComponent = (function () {
         ];
         this.map = new __WEBPACK_IMPORTED_MODULE_1__assets_smartmapx_smartmapx_js__["Map"]({
             container: 'map',
-            style: 'http://192.168.58.128/map/beijing_style.json',
+            style: 'http://59.110.157.48/map/beijing_style.json',
+            // style: 'http://192.168.58.128/map/beijing_style.json',
             center: [116.39738, 39.90579],
             zoom: 7
         });
@@ -277,6 +278,14 @@ var AppComponent = (function () {
         this.visibility === 'visible' ? this.visibility = 'none' : this.visibility = 'visible';
         this.map.setLayoutProperty('adm_县级市', 'visibility', this.visibility);
         this.map.setLayoutProperty('adm_area', 'visibility', this.visibility);
+    };
+    AppComponent.prototype.clostSta = function () {
+        this.id = '';
+        this.type = '';
+        if (this.marker) {
+            this.marker.remove();
+        }
+        this.map.flyTo({ center: [116.39738, 39.90579], zoom: 7 });
     };
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({

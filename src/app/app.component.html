@@ -1,6 +1,7 @@
 <div id="map"></div>
 <p-panelMenu [model]="items" [style]="{'width':'200px'}"></p-panelMenu>
 <button pButton type="button" (click)="onclick()" [label]="visibility === 'visible'? '隐藏':'显示'" style="position: fixed;top: 20px;right: 20px;"></button>
+<button pButton type="button" (click)="clostSta()" label="关闭" style="position: fixed;top: 60px;right: 20px;"></button>
 <!--柱状图-->
 <app-bar *ngIf="id === 'bar'" [type]="type"></app-bar>
 <!--饼状图-->
