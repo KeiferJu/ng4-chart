@@ -16,7 +16,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"map\"></div>\n<p-panelMenu [model]=\"items\" [style]=\"{'width':'200px'}\"></p-panelMenu>\n<!--柱状图-->\n<app-bar *ngIf=\"id === 'bar'\" [type]=\"type\"></app-bar>\n<!--饼状图-->\n<app-pie *ngIf=\"id === 'pie'\" [type]=\"type\"></app-pie>\n<!--折线图-->\n<app-line *ngIf=\"id === 'line'\" [type]=\"type\"></app-line>\n<!--面积图-->\n<app-area *ngIf=\"id === 'area'\" [type]=\"type\"></app-area>\n<!--散点图-->\n<app-splashes *ngIf=\"id === 'splashes'\" [type]=\"type\"></app-splashes>\n<!--气泡图-->\n<app-bubble *ngIf=\"id === 'bubble'\" [type]=\"type\"></app-bubble>\n<!--仪表盘-->\n<app-dashboard *ngIf=\"id === 'dashboard'\" [type]=\"type\"></app-dashboard>\n<!--点密度图-->\n<app-pointdensity *ngIf=\"id === 'pointdensity'\" [type]=\"type\"></app-pointdensity>\n<!--混合图-->\n<app-hybird *ngIf=\"id === 'hybird'\" [type]=\"type\"></app-hybird>\n"
+module.exports = "<div id=\"map\"></div>\n<p-panelMenu [model]=\"items\" [style]=\"{'width':'200px'}\"></p-panelMenu>\n<button pButton type=\"button\" (click)=\"onclick()\" [label]=\"visibility === 'visible'? '隐藏':'显示'\" style=\"position: fixed;top: 20px;right: 20px;\"></button>\n<!--柱状图-->\n<app-bar *ngIf=\"id === 'bar'\" [type]=\"type\"></app-bar>\n<!--饼状图-->\n<app-pie *ngIf=\"id === 'pie'\" [type]=\"type\"></app-pie>\n<!--折线图-->\n<app-line *ngIf=\"id === 'line'\" [type]=\"type\"></app-line>\n<!--面积图-->\n<app-area *ngIf=\"id === 'area'\" [type]=\"type\"></app-area>\n<!--散点图-->\n<app-splashes *ngIf=\"id === 'splashes'\" [type]=\"type\"></app-splashes>\n<!--气泡图-->\n<app-bubble *ngIf=\"id === 'bubble'\" [type]=\"type\"></app-bubble>\n<!--仪表盘-->\n<app-dashboard *ngIf=\"id === 'dashboard'\" [type]=\"type\"></app-dashboard>\n<!--点密度图-->\n<app-pointdensity *ngIf=\"id === 'pointdensity'\" [type]=\"type\"></app-pointdensity>\n<!--混合图-->\n<app-hybird *ngIf=\"id === 'hybird'\" [type]=\"type\"></app-hybird>\n"
 
 /***/ }),
 
@@ -28,7 +28,7 @@ exports = module.exports = __webpack_require__("../../../../_css-loader@0.28.7@c
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  padding: 0; }\n\n#map {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  width: 100%; }\n\n.demo-chart {\n  height: 400px; }\n", ""]);
+exports.push([module.i, "body {\n  margin: 0;\n  padding: 0; }\n\n#map {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  width: 100%; }\n\n.demo-chart {\n  height: 400px; }\n\n.sta-check {\n  position: fixed;\n  top: 20px; }\n", ""]);
 
 // exports
 
@@ -59,6 +59,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var AppComponent = (function () {
     function AppComponent() {
+        this.visibility = 'visible';
         this.el = document.createElement('div');
         this.el.className = 'marker';
         this.el.style.backgroundImage = 'url(http://59.110.157.48/docs/static/map/images/default_marker.png)';
@@ -122,7 +123,7 @@ var AppComponent = (function () {
                             if (_this.marker) {
                                 _this.marker.remove();
                             }
-                            _this.map.flyTo({ center: [116.39738, 39.90579], zoom: 7 });
+                            _this.map.flyTo({ center: [116.39738, 39.90579], zoom: 8 });
                         }
                     }
                 ]
@@ -134,10 +135,10 @@ var AppComponent = (function () {
                         id: 'line', label: '某网站日访问记录', title: 'line1', icon: 'fa-line-chart', command: function (e) {
                             _this.id = e.item.id;
                             _this.type = e.item.title;
-                            if (_this.marker) {
-                                _this.marker.remove();
-                            }
-                            _this.map.flyTo({ center: [116.41792, 39.92202], zoom: 11 });
+                            _this.map.flyTo({ center: [116.29242, 40.042041], zoom: 12 });
+                            _this.marker = new __WEBPACK_IMPORTED_MODULE_1__assets_smartmapx_smartmapx_js__["Marker"](_this.el, { offset: [-10, -28] })
+                                .setLngLat([116.29242, 40.042041])
+                                .addTo(_this.map);
                         }
                     },
                     {
@@ -147,10 +148,7 @@ var AppComponent = (function () {
                             if (_this.marker) {
                                 _this.marker.remove();
                             }
-                            _this.map.flyTo({ center: [109.058452855419, 34.2482986865398], zoom: 9 });
-                            _this.marker = new __WEBPACK_IMPORTED_MODULE_1__assets_smartmapx_smartmapx_js__["Marker"](_this.el, { offset: [-10, -28] })
-                                .setLngLat([109.058452855419, 34.2482986865398])
-                                .addTo(_this.map);
+                            _this.map.flyTo({ center: [116.41792, 39.92202], zoom: 12 });
                         }
                     }
                 ]
@@ -190,6 +188,7 @@ var AppComponent = (function () {
                             if (_this.marker) {
                                 _this.marker.remove();
                             }
+                            _this.map.flyTo({ center: [116.39738, 39.90579], zoom: 8 });
                         }
                     },
                 ]
@@ -204,7 +203,7 @@ var AppComponent = (function () {
                             if (_this.marker) {
                                 _this.marker.remove();
                             }
-                            _this.map.flyTo({ center: [116.39738, 39.90579], zoom: 3 });
+                            _this.map.flyTo({ center: [116.39738, 39.90579], zoom: 8 });
                         }
                     }
                 ]
@@ -236,7 +235,7 @@ var AppComponent = (function () {
                             if (_this.marker) {
                                 _this.marker.remove();
                             }
-                            _this.map.flyTo({ center: [116.39738, 39.90579], zoom: 3 });
+                            _this.map.flyTo({ center: [116.39738, 39.90579], zoom: 8 });
                         }
                     }
                 ]
@@ -251,10 +250,7 @@ var AppComponent = (function () {
                             if (_this.marker) {
                                 _this.marker.remove();
                             }
-                            _this.map.flyTo({ center: [117.087567542709, 36.7320552654274], zoom: 12 });
-                            _this.marker = new __WEBPACK_IMPORTED_MODULE_1__assets_smartmapx_smartmapx_js__["Marker"](_this.el, { offset: [-10, -28] })
-                                .setLngLat([117.087567542709, 36.7320552654274])
-                                .addTo(_this.map);
+                            _this.map.flyTo({ center: [116.39738, 39.90579], zoom: 8 });
                         }
                     },
                     {
@@ -264,7 +260,7 @@ var AppComponent = (function () {
                             if (_this.marker) {
                                 _this.marker.remove();
                             }
-                            _this.map.flyTo({ center: [117.087567542709, 36.7320552654274], zoom: 12 });
+                            _this.map.flyTo({ center: [116.39738, 39.90579], zoom: 8 });
                         }
                     }
                 ]
@@ -276,6 +272,11 @@ var AppComponent = (function () {
             center: [116.39738, 39.90579],
             zoom: 7
         });
+    };
+    AppComponent.prototype.onclick = function () {
+        this.visibility === 'visible' ? this.visibility = 'none' : this.visibility = 'visible';
+        this.map.setLayoutProperty('adm_县级市', 'visibility', this.visibility);
+        this.map.setLayoutProperty('adm_area', 'visibility', this.visibility);
     };
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -356,7 +357,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_4_ngx_echarts__["a" /* AngularEchartsModule */],
                 __WEBPACK_IMPORTED_MODULE_14_primeng_primeng__["AccordionModule"],
                 __WEBPACK_IMPORTED_MODULE_14_primeng_primeng__["PanelMenuModule"],
-                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
+                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_14_primeng_primeng__["ButtonModule"]
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]

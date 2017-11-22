@@ -14,7 +14,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {PointdensityComponent} from './pointdensity/pointdensity.component';
 import {HybirdComponent} from './hybird/hybird.component';
 
-import {AccordionModule, PanelMenuModule} from 'primeng/primeng';
+import {AccordionModule, PanelMenuModule, ButtonModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import {AccordionModule, PanelMenuModule} from 'primeng/primeng';
     AngularEchartsModule,
     AccordionModule,
     PanelMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

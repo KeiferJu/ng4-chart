@@ -53,7 +53,7 @@ exports.i(__webpack_require__("../../../../_css-loader@0.28.7@css-loader/index.j
 exports.i(__webpack_require__("../../../../_css-loader@0.28.7@css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../_postcss-loader@1.3.3@postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../_primeng@4.3.0@primeng/resources/primeng.min.css"), "");
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n.demo-chart {\n  width: 400px;\n  height: 400px;\n  position: fixed !important;\n  background: rgba(51, 51, 51, 0.8) !important;\n  right: 10px;\n  bottom: 20px;\n}\n\n.demo-chart1 {\n  width: 100%;\n  height: 400px;\n  position: fixed !important;\n  background: rgba(51, 51, 51, 0.8) !important;\n  left: 5px;\n  bottom: 5px;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n.demo-chart {\n  width: 400px;\n  height: 400px;\n  position: fixed !important;\n  background: rgba(51, 51, 51, 0.8) !important;\n  right: 10px;\n  bottom: 20px;\n}\n\n.demo-chart1 {\n  width: calc(100% - 250px);\n  height: 400px;\n  position: fixed !important;\n  background: rgba(51, 51, 51, 0.8) !important;\n  right: 10px;\n  bottom: 5px;\n}\n", ""]);
 
 // exports
 

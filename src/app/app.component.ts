@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   map: any;
   marker: any;
   el: any;
+  visibility = 'visible';
 
   constructor() {
     this.el = document.createElement('div');
@@ -85,7 +86,7 @@ export class AppComponent implements OnInit {
             if (this.marker) {
               this.marker.remove();
             }
-            this.map.flyTo({center: [116.39738, 39.90579], zoom: 7});
+            this.map.flyTo({center: [116.39738, 39.90579], zoom: 8});
           }
           }
         ]
@@ -98,10 +99,10 @@ export class AppComponent implements OnInit {
             this.id = e.item.id;
             this.type = e.item.title;
 
-            if (this.marker) {
-              this.marker.remove();
-            }
-            this.map.flyTo({center: [116.41792, 39.92202], zoom: 11});
+            this.map.flyTo({center: [116.29242, 40.042041], zoom: 12});
+            this.marker = new smartmapx.Marker(this.el, {offset: [-10, -28]})
+              .setLngLat([116.29242, 40.042041])
+              .addTo(this.map);
           }
           },
           {
@@ -112,10 +113,7 @@ export class AppComponent implements OnInit {
             if (this.marker) {
               this.marker.remove();
             }
-            this.map.flyTo({center: [109.058452855419, 34.2482986865398], zoom: 9});
-            this.marker = new smartmapx.Marker(this.el, {offset: [-10, -28]})
-              .setLngLat([109.058452855419, 34.2482986865398])
-              .addTo(this.map);
+            this.map.flyTo({center: [116.41792, 39.92202], zoom: 12});
           }
           }
         ]
@@ -160,6 +158,7 @@ export class AppComponent implements OnInit {
             if (this.marker) {
               this.marker.remove();
             }
+            this.map.flyTo({center: [116.39738, 39.90579], zoom: 8});
           }
           },
           // {
@@ -215,7 +214,7 @@ export class AppComponent implements OnInit {
             if (this.marker) {
               this.marker.remove();
             }
-            this.map.flyTo({center: [116.39738, 39.90579], zoom: 3});
+            this.map.flyTo({center: [116.39738, 39.90579], zoom: 8});
           }
           }
         ]
@@ -249,7 +248,7 @@ export class AppComponent implements OnInit {
             if (this.marker) {
               this.marker.remove();
             }
-            this.map.flyTo({center: [116.39738, 39.90579], zoom: 3});
+            this.map.flyTo({center: [116.39738, 39.90579], zoom: 8});
           }
           }
         ]
@@ -265,10 +264,7 @@ export class AppComponent implements OnInit {
             if (this.marker) {
               this.marker.remove();
             }
-            this.map.flyTo({center: [117.087567542709, 36.7320552654274], zoom: 12});
-            this.marker = new smartmapx.Marker(this.el, {offset: [-10, -28]})
-              .setLngLat([117.087567542709, 36.7320552654274])
-              .addTo(this.map);
+            this.map.flyTo({center: [116.39738, 39.90579], zoom: 8});
           }
           },
           {
@@ -279,7 +275,7 @@ export class AppComponent implements OnInit {
             if (this.marker) {
               this.marker.remove();
             }
-            this.map.flyTo({center: [117.087567542709, 36.7320552654274], zoom: 12});
+            this.map.flyTo({center: [116.39738, 39.90579], zoom: 8});
           }
           }
         ]
@@ -288,10 +284,17 @@ export class AppComponent implements OnInit {
 
     this.map = new smartmapx.Map({
       container: 'map',
-      style: 'http://192.168.58.128/map/beijing_style.json',
+      style: 'http://59.110.157.48/map/beijing_style.json',
+      // style: 'http://192.168.58.128/map/beijing_style.json',
       center: [116.39738, 39.90579],
       zoom: 7
     });
+  }
+
+  onclick() {
+    this.visibility === 'visible'? this.visibility = 'none': this.visibility = 'visible';
+    this.map.setLayoutProperty('adm_县级市', 'visibility', this.visibility)
+    this.map.setLayoutProperty('adm_area', 'visibility', this.visibility)
   }
 
 }

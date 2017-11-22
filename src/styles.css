@@ -14,10 +14,10 @@
 }
 
 .demo-chart1 {
-  width: 100%;
+  width: calc(100% - 250px);
   height: 400px;
   position: fixed !important;
   background: rgba(51, 51, 51, 0.8) !important;
-  left: 5px;
+  right: 10px;
   bottom: 5px;
 }
